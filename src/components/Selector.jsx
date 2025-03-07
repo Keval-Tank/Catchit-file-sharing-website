@@ -74,7 +74,7 @@ const Selector = () => {
                 </div>
             </div>
             <div className='bg-[#13204c] h-max rounded-2xl'>
-                <div className='w-[340px]  bg-blue-950 text-2xl px-1 py-5 mt-5 font-[roboto] text-white  p rounded-2xl border-2 border-white border-dashed hidden ' id='share-details'>
+                <div className='w-[340px]  bg-blue-950 text-lg px-1 py-5 mt-5 font-[roboto] text-white  p rounded-2xl border-2 border-white border-dashed hidden ' id='share-details'>
                     <div>
                         <div className='flex justify-center items-center text center gap-20 mb-3'>
                             <h1 className='text-3xl font-semibold w-fit'>Shared Files</h1><span className='text-blue-950 font-[roboto] bg-[#fdc500] px-2 rounded-full' >{count}</span>
