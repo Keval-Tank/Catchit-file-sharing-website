@@ -29,7 +29,7 @@ const Reciever = () => {
     const getFiles = async () => {
       const response = await axios.get(`https://catchit-file-sharing-website.onrender.com/receive/${code}`)
       console.log(response)
-      if (response.statusText === "OK") {
+      if (response.status === 200) {
         setFiles(response.data.files);
         console.log(response.data.files)
       }
