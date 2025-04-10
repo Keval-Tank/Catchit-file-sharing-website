@@ -6,7 +6,7 @@ import { io } from 'socket.io-client';
 
 
 const Selector = () => {
-    const socket = io('http://localhost:3000');
+    const socket = io('https://catchit-file-sharing-website.onrender.com');
     const [code, setCode] = useState();
     const [started, setStarted] = useState(false);
     const [file, setFile] = useState([]);
@@ -40,7 +40,7 @@ const Selector = () => {
 
         setCount((pre) => pre + 1);
         try {
-            const response = await axios.post(`http://localhost:3000/send-file`, formData, {
+            const response = await axios.post(`https://catchit-file-sharing-website.onrender.com/send-file`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -80,7 +80,7 @@ const Selector = () => {
                             <h1 className='text-3xl font-semibold w-fit'>Shared Files</h1><span className='text-blue-950 font-[roboto] bg-[#fdc500] px-2 rounded-full' >{count}</span>
                         </div>
                         <div><p className='text-[15px] p-2'>Here is your Share Link. You can share it with others.</p></div>
-                        <div className=''><a href={"http://localhost:5173/nearby/" + code} target='_blank' className='font-semibold font-[roboto] text-xl w-auto bg-[#080f27] p-2 rounded-2xl mt-5'>http://localhost:5173/nearby/{code}</a></div>
+                        <div className=''><a href={"https://catchit-file-sharing-website-mk-4.onrender.com/nearby/" + code} target='_blank' className='font-semibold font-[roboto] text-xl w-auto bg-[#080f27] p-2 rounded-2xl mt-5'>http://localhost:5173/nearby/{code}</a></div>
                         <div className='overflow-y-auto h-[150px] mt-5'>
                             <ul className='text-lg mt-3'>{list.map((item, key) => (
                                 <li key={key} className='ml-2'>{item}</li>

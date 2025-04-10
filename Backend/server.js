@@ -23,7 +23,7 @@ let fileData={}
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://catchit-keval-1.onrender.com",
+        origin: "https://catchit-file-sharing-website-mk-4.onrender.com",
         methods: ["GET", "POST"]
     }
 });

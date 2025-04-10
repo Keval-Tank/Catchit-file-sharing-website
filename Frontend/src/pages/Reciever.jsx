@@ -8,7 +8,7 @@ import axios from 'axios';
 const Reciever = () => {
   let { code } = useParams();
   console.log(code)
-  const socket = io('http://localhost:3000');
+  const socket = io('https://catchit-file-sharing-website.onrender.com');
   const [files, setFiles] = useState([])
 
 
@@ -27,7 +27,7 @@ const Reciever = () => {
     });
 
     const getFiles = async () => {
-      const response = await axios.get(`http://localhost:3000/receive/${code}`)
+      const response = await axios.get(`https://catchit-file-sharing-website.onrender.com/receive/${code}`)
       console.log(response)
       if (response.statusText === "OK") {
         setFiles(response.data.files);
@@ -57,7 +57,7 @@ const Reciever = () => {
                     <li key={key} className='flex w-[100%] justify-between'>
                       <div className='flex justify-between items-center w-[100%] mb-2'>
                         <span>{file.originalname}</span>
-                        <a href={"http://localhost:3000/download/"+file.filename+"/"+file.originalname} download={file.filename} target='_blank'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-max"  >
+                        <a href={"https://catchit-file-sharing-website.onrender.com/download/"+file.filename+"/"+file.originalname} download={file.filename} target='_blank'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-max"  >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                         </svg>
                         </a>
